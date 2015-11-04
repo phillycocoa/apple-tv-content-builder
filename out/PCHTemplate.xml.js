@@ -1,8 +1,23 @@
 
-// Before uploading: Replace the escaped less than symbol with a less than symbol 
+
+// Before uploading: Replace the escaped less than symbol with a less than symbol
 // FIXME: This sucks ^^
 var Template = function() { return `&lt;?xml version="1.0" encoding="UTF-8" ?>
   <document>
+
+    
+  <head>
+    <style>
+      .descriptionText {
+        margin: 20;
+        color: #444440;
+        font-size: 36;
+        max-height: 500;
+        tv-text-max-lines: 12;
+      }
+    </style>
+  </head>
+
     <catalogTemplate>
       <banner>
         <title>Philly CocoaHeads</title>
@@ -60,8 +75,19 @@ var Template = function() { return `&lt;?xml version="1.0" encoding="UTF-8" ?>
               <img src="https://i.vimeocdn.com/video/507064603_640x360.jpg" width="500" height="282" />
             </lockup>
             
-		</section>
+		      </section>
 	      </grid>
+	    </relatedContent>
+	  </listItemLockup>
+	  <listItemLockup>
+	    <title>About</title>
+	    <relatedContent>
+   			<header>
+   <title>About Philly CocooaHeads</title>
+   <description class="descriptionText">Philly CocoaHeads is Philadelphia's premier Apple-related programming group, a chapter of the worldwide CocoaHeads. All skill levels are welcome. The only requirement is an interest in Apple-related technologies and a moderate tolerance for geeking out. Please visit our website for more information on events and other community activities.
+
+http://phillycocoa.org </description>
+</header>
 	    </relatedContent>
 	  </listItemLockup>
         </section>
