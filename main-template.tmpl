@@ -1,0 +1,31 @@
+{{ $videos := .VideoRecords }}
+// Before uploading: Replace the escaped less than symbol with a less than symbol 
+// FIXME: This sucks ^^
+var Template = function() { return `<?xml version="1.0" encoding="UTF-8" ?>
+  <document>
+    <catalogTemplate>
+      <banner>
+        <title>Philly CocoaHeads</title>
+      </banner>
+      <list>
+        <section>
+	  <listItemLockup>
+	    <title>Recent Videos</title>
+	    <decorationLabel>{{.CountOfVideoRecords}}</decorationLabel>
+	    <relatedContent>
+	      <grid>
+	        <section>
+            {{range $video := $videos}}
+            <lockup videoURL="{{$video.HDFile.Link}}">
+              <img src="{{$video.Pictures.ThumbnailSize.Link}}" width="500" height="282" />
+            </lockup>
+            {{end}}
+		</section>
+	      </grid>
+	    </relatedContent>
+	  </listItemLockup>
+        </section>
+      </list>
+    </catalogTemplate>
+  </document>`
+}
